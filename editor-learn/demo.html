@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script> -->
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 初始化时 获取到的app详情
+      // let str =
+      //   '{"version":"6.1.1","img":"https://cdn.h5ds.com/static/images/img-null.png","desc":"点石H5，官方网站h5ds.com","name":"点石H5","type":0,"slider":{"direction":"vertical","speed":0.5,"effect":"slide","autoplay":false,"time":5},"music":{"disabled":true,"name":"","url":"","icon":"","delay":0,"loop":true},"loader":{"logo":"https://cdn.h5ds.com/static/images/logo_blue.png","logoAnimate":"","backgroundColor":"rgba(255,255,255,1)","backgroundImage":"","progress":true},"style":{"width":320,"height":514},"fixeds":[{"id":null,"className":null,"keyid":"1tbyjybshd9c00","name":"浮动层上","style":{"height":514,"width":320},"layers":[],"eventId":"36933att69a000","slider":{"autoplay":false,"showScroll":false,"lock":false,"time":5}},{"id":null,"className":null,"keyid":"9k90anibhbk00","name":"浮动层下","style":{"height":514,"width":320},"layers":[],"eventId":"5ebchf69wmc000","slider":{"autoplay":false,"showScroll":false,"lock":false,"time":5}}],"popups":[],"pages":[{"id":null,"className":null,"keyid":"4suow8020ye000","name":"空白页面","desc":"页面描述","style":{"width":320,"height":514},"layers":[],"slider":{"animate":1,"autoplay":false,"lock":false,"time":5},"eventId":"5p8v1zuqfxs000"}],"loading":{"img":"","animate":"","backgroundColor":"rgba(255,255,255,1)","backgroundImage":"","progress":false},"plugins":[]}';
+      // console.log(JSON.parse(str));
+    </script>
+    <script>
+      // 模拟 订阅发布模式
+
+      // let event = {
+      //   events: [],
+      //   /**
+      //    * 添加订阅
+      //    * @param  {[String]}   event     [description]
+      //    * @param  {Function}     fn         [description]
+      //    * @return {[undefined]}        [description]
+      //    */
+      //   on(event, fn) {
+      //     if (!event || !fn) return;
+      //     let hasEvent = this.hasEvent(event);
+      //     if (hasEvent) {
+      //       hasEvent.handler.push(fn);
+      //     } else {
+      //       this.events.push({
+      //         type: event,
+      //         handler: [fn],
+      //       });
+      //     }
+      //   },
+      //   /**
+      //    * 发布订阅
+      //    * @param  {[String]}    event     [description]
+      //    * @param  {...[any]}     arg       [description]
+      //    * @return {[undefined]}        [description]
+      //    */
+      //   emit(event, ...arg) {
+      //     let hasEvent = this.hasEvent(event);
+      //     if (hasEvent) {
+      //       hasEvent.handler.forEach((fn) => fn(...arg));
+      //     } else {
+      //       console.log("该事件还没有订阅");
+      //     }
+      //   },
+      //   /**
+      //    * 判断该事件是否已经注册
+      //    * @param  {[String]}      event     [description]
+      //    * @return {Boolean}               [description]
+      //    */
+      //   hasEvent(event) {
+      //     return this.events.find((ele) => ele.type === event);
+      //   },
+      //   /**
+      //    * 移除订阅事件
+      //    * @param  {[type]}   event [description]
+      //    * @param  {Function} fn    [description]
+      //    * @return {[type]}         [description]
+      //    */
+      //   removeEvent(event, fn) {
+      //     if (event && fn) {
+      //       let eve = this.hasEvent(event);
+      //       if (eve) {
+      //         eve.handler.splice(eve.handler.indexOf(fn), 1);
+      //       }
+      //     }
+      //     if (event && !fn) {
+      //       for (let i = 0; i < this.events.length; i++) {
+      //         if (this.events[i].type === event) {
+      //           this.events.splice(i, 1);
+      //           break;
+      //         }
+      //       }
+      //     }
+      //   },
+      // };
+      // event.on("subscribe", ajax);
+      // // event.emit("subscribe");
+      // function ajax() {
+      //   $.ajax({
+      //     url: "./demo.json",
+      //     method: "get",
+      //     dataType: "jsonp",
+      //     success(res) {
+      //       console.log(res);
+      //     },
+      //     error(err) {
+      //       console.log(err.responseText);
+      //     },
+      //   });
+      // }
+    </script>
+    <script>
+      // 测试有promise的情况下的执行顺序
+
+      // function a() {
+      //   setTimeout(() => {
+      //     console.log("asd");
+      //   });
+      //   console.log(123);
+      //   return new Promise(() => {
+      //     console.log("zxc");
+      //     return "qwe";
+      //   });
+      // }
+    </script>
+    <script>
+      // class Demo {
+      //   constructor (){
+      //     this.name = 'qwe'
+      //   }
+      //   sayName = ()=>{
+      //     console.log(this.name)
+      //   }
+      // }
+      // let a = new Demo()
+      // a.sayName()
+    </script>
+    <script>
+      // let arr = [1, 1, 2, 0, 3, 45, 9, 2, 3, 5];
+
+      // arr = Array.from(new Set(arr)).filter((d) => d);
+      // console.log(arr)
+    </script>
+    <!-- <script>
+      let a;
+      let b = 2
+      let min 
+      let max 
+      if(a > b){
+        min = b
+        max = a 
+      }else{
+        min = a
+        max = b
+      }
+      console.log(NaN<=1)
+
+    </script> -->
+    <script>
+      /**
+       * 1. 加了async关键字的return的都是一个promise对象
+       * 2. 如果一个函数仅仅是加了async关键字 那么他还是会同步的去执行
+       * 3. 如果是async函数配合了await使用 那么在执行阶段是会先执行同步的操作 执行完了才会同步的去执行async函数内部的逻辑
+       */
+
+      // function f1 (){
+      //   return new Promise((resolve,reject)=>{
+      //     resolve(1)
+      //   })
+      // }
+      // async function f2(){
+      //   let a = await f1()
+      //   console.log(a)
+      //   return a
+      // }
+      // let b = f2()
+      // console.log(b)
+    </script>
+    <script>
+      // function a (...name){
+      //   console.log(name)
+      // }
+
+      // a('pageList', 'script')
+    </script>
+    <script>
+      // const imgLazy = (src) => {
+      //   return new Promise((resolve, reject) => {
+      //     const img = new Image();
+      //     img.src = src;
+      //     img.onload = function () {
+      //       console.log("图片加载成功", img);
+      //       resolve(img);
+      //     };
+      //     img.onerror = function () {
+      //       console.error("图片加载失败", img);
+      //       reject(img);
+      //     };
+      //   });
+      // };
+      // imgLazy(
+      //   "https://cdn.h5ds.com/uploads/s/20201029/09653e173ba87d6ebf0f999c48cb6637b58e12fc.png"
+      // );
+    </script>
+    <script>
+    </script>
+  </body>
+</html>
