@@ -38,3 +38,30 @@
     - 这个插件是用来配置全局变量的
     - 参数为一个对象
     - 如果变量为一个字符串 那么需要写成 ``` '" some str "' ```
+    - 或者使用JSON.stringify
+
+* webpack.NoEmitOnErrorsPlugin
+    - 在编译出现出现错误的时候，使用NoEmitOnErrorsPlugin 来跳过 输出阶段
+    - 如果你在使用CLI 启用此插件后，webpack进程遇到错误代码讲不会退出
+
+* webpack.HotModuleReplacementPlugin
+    - 配置热更新的条件之一
+    - 另一个条件是在devServer中配置 hot:true 
+    - hooOnly :true  即使HMR没有生效 浏览器也不自动刷新
+
+    - 热更新的工作原理 
+        - 应用程序要求HMR runtime检查更新
+        - HMR runtime 异步地下载更新，然后通知应用程序
+        - 应用程序要求HMR runtime应用更新
+        - HMR runtime同步地应用更新
+
+* CaseSensitivePathsPlugin
+    - 区分大小写的路径插件
+
+* MiniCssExtractPlugin
+    - 讲css提取到单独的文件中，它为每个包含css的js文件创建一个css文件。它支持css和sourcemap的按需加载基于webpack v4功能构建
+    - 异步加载
+    - 没有重复的编译
+    - 更容易使用
+    - 特定于css
+    
