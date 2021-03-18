@@ -47,7 +47,9 @@
 * webpack.HotModuleReplacementPlugin
     - 配置热更新的条件之一
     - 另一个条件是在devServer中配置 hot:true 
+        - 没有这个插件的时候 热更新也会生效  HMR是热替换 webpakc-dev-server内部自动完成了热更新
     - hooOnly :true  即使HMR没有生效 浏览器也不自动刷新
+    - HMR绝对不能在生产环境中使用
 
     - 热更新的工作原理 
         - 应用程序要求HMR runtime检查更新
