@@ -64,4 +64,12 @@
     - 没有重复的编译
     - 更容易使用
     - 特定于css
-    
+
+* CleanWebpackPlugin
+    - 用于删除 / 清理构建的文件夹
+    - 默认情况下 此插件讲output.path 在每次成功重建后删除webpack目录中的所有文件以及所有未使用的webpack资产
+    - 配置选项
+        - root: 文件路径根，默认为当前路径
+        - exclude: 排除的文件
+        - verbose: 将日志写入控制台
+        - dry: 模拟文件删除
