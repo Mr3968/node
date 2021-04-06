@@ -8,12 +8,12 @@
       id="webgl"
       width="500"
       height="500"
-      style="background-color: #ffffff"
+      style="background-color: pink"
     ></canvas>
     <script>
       var canvasElement = document.getElementById("webgl");
       var gl = canvasElement.getContext("webgl");
-      console.log(gl)
+      console.log(gl);
       //    顶点着色器源码
       var vertexShaderSource =
         "" +
@@ -45,8 +45,10 @@
      创建顶点位置数据数组data，存储两个顶点(-0.5,0.5、(0.5,0.5)
      创建顶点颜色数组colorData，存储两个顶点对应RGB颜色值(0,0,1)、(1,0,0)
      **/
-      var data = new Float32Array([-0.5, 0.5, 0.5, 0.5]);
-      var colorData = new Float32Array([0, 0, 1, 1, 0, 0]);
+      // var data = new Float32Array([-0.5, 0.5, 0.5, 0.5]); 两个点直线的绘制
+      var data = new Float32Array([-0.5, 0.5, 0.5, 0.5, 0.5, -0.5]); // 三个点绘制三角形的
+      // var colorData = new Float32Array([0, 0, 1, 1, 0, 0]); 直线的颜色数据
+      var colorData = new Float32Array([1, 0, 0, 0, 1, 0, 0, 0, 1]); // 三角形的颜色数据
       /**
      创建缓冲区colorBuffer，传入顶点颜色数据colorData
      **/
@@ -65,7 +67,10 @@
       gl.enableVertexAttribArray(aposLocation);
 
       /**执行绘制命令**/
-      gl.drawArrays(gl.LINES, 0, 2);
+      // 直线绘制
+      // gl.drawArrays(gl.LINES, 0, 2);
+      // 三角形绘制
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
 
       /**
      初始化函数initShader()
