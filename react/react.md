@@ -24,3 +24,5 @@
 8. 类组件的 this.forceUpdate 这个函数里面是调用 this 的 所以当你需要吧这个函数传递给子组件的时候 你需要修改它 this 指向问题用回调或者 bind 等等
 
 9. mobx 的使用 技巧 对于类组件来说 当我类组件中 render 函数中 使用了 mobx 的可观察的值的话 那么当我这个值变化的时候 是会重新触发类组件的 render 函数的
+
+10. dangerouslySetInnerHTML 直接在vnode下面添加html代码
