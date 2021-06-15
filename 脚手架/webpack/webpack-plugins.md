@@ -25,7 +25,7 @@
             - header: js资源注入到header中
             - false：css和js都不会注入
         5. favicon: 添加特定的favicon路径输出到html中，需要在模板中单独配置
-        6. title: template的title属性，需要子啊模板中单独配置
+        6. title: template的title属性，需要在模板中单独配置
         7. chunks: 允许插入到模板中的chunk，如果不配置的话则会向entry中所有的打包出来的文件引入到模板中，这个一般在多应用中经常使用
         8. excludeChunks: 于chunk功能相反 
         9. chunksSortMode: no/auto/function 默认为auto，打包文件引入到模板的顺序模式
