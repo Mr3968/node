@@ -26,3 +26,5 @@
 9. mobx 的使用 技巧 对于类组件来说 当我类组件中 render 函数中 使用了 mobx 的可观察的值的话 那么当我这个值变化的时候 是会重新触发类组件的 render 函数的
 
 10. dangerouslySetInnerHTML 直接在vnode下面添加html代码
+
+11. Profiler 测量一个应用多久渲染一次以及渲染一次的代价
