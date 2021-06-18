@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 100  1ms+
+      // 1000  8ms+
+      // 1000000  5840ms+ 浏览器出现胶严重的卡顿了
+      // 10000000 浏览器当前进程直接卡死
+      //   function print(n) {
+      //     console.time();
+      //     for (let i = 1; i < n; i++) {
+      //       console.log(i);
+      //     }
+      //     console.timeEnd();
+      //   }
+      //   print(10000000);
+
+      // 100  1ms+
+      // 1000  8ms+
+      // 1000000  直接报错栈溢出
+      // 10000000 
+      function print(n) {
+        if (n !== 1) {
+          print(n - 1);
+          console.log(n);
+        }
+        return;
+      }
+      console.time();
+      print(1000000);
+      console.timeEnd();
+    </script>
+  </body>
+</html>
