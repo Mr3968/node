@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 快速排序的基础就是选择一个中间值作为基准 比较他的大小 小的在边的子集  大的在右边的子集
+      // 子集在重复进行一次这个操作
+      let arr = [11, 22, 344, 1, 4515, 15, 6489, 5, 2, 3, 4, 555, 42012];
+
+      function quickSort(arr) {
+        let smallArr = [];
+        let bigArr = [];
+        let index = parseInt(arr.length / 2);
+        if (index === 0) return arr;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] < arr[index]) {
+            smallArr.push(arr[i]);
+          } else if (arr[i] > arr[index]) {
+            bigArr.push(arr[i]);
+          }
+        }
+        if (smallArr.length > 1) {
+          smallArr = quickSort(smallArr);
+        }
+        if (bigArr.length > 1) {
+          bigArr = quickSort(bigArr);
+        }
+        return [...smallArr, arr[index], ...bigArr];
+      }
+
+      let sort = quickSort(arr);
+      console.log(sort);
+    </script>
+  </body>
+</html>
