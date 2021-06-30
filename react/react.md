@@ -23,8 +23,27 @@
 
 8. 类组件的 this.forceUpdate 这个函数里面是调用 this 的 所以当你需要吧这个函数传递给子组件的时候 你需要修改它 this 指向问题用回调或者 bind 等等
 
-9. mobx 的使用 技巧 对于类组件来说 当我类组件中 render 函数中 使用了 mobx 的可观察的值的话 那么当我这个值变化的时候 是会重新触发类组件的 render 函数的
+9. mobx 的使用 技巧 对于类组件来说 当我类组件中 render 函数中 使用了 mobx 的可观察的值的话 那么当我这个值变化的时候 是会重新触发类组件的 render 阶段
 
-10. dangerouslySetInnerHTML 直接在vnode下面添加html代码
+10. dangerouslySetInnerHTML 直接在 vnode 下面添加 html 代码
 
 11. Profiler 测量一个应用多久渲染一次以及渲染一次的代价
+
+12. Suspense 在动态导入的帮助下，让我们轻松定义延迟加载组件
+   - 配合react.lacy使用
+   - api还不稳定 
+
+```
+const OtherComponent = React.lazy(() => import('./OtherComponent'));
+
+function MyComponent() {
+  return (
+    <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <OtherComponent />
+        // 可包裹多个
+      </Suspense>
+    </div>
+  );
+}
+```
