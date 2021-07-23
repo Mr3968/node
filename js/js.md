@@ -32,5 +32,7 @@ port2.postMessage('qwe')
 
 // 两个端口互相传输消息
 
-// 传输的数据是深拷贝的 
+// 传输的数据是深拷贝的
 ```
+
+8. font-variant-east-asian: traditional; 一行 css 代码就可以实现网站的简体中文变成繁体中文 但是这种效果是需要字体本身包含繁体变体 而在 windows 系统中的几个默认字体都没有包含繁体变体 在 OS X 也就是 iMac 或者 Mac pro 以及 ios 系统 iPad 等设备的默认中文字体是包含繁体变体的
