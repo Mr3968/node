@@ -36,3 +36,23 @@ port2.postMessage('qwe')
 ```
 
 8. font-variant-east-asian: traditional; 一行 css 代码就可以实现网站的简体中文变成繁体中文 但是这种效果是需要字体本身包含繁体变体 而在 windows 系统中的几个默认字体都没有包含繁体变体 在 OS X 也就是 iMac 或者 Mac pro 以及 ios 系统 iPad 等设备的默认中文字体是包含繁体变体的
+
+9. 在原生 ajax 中取消接口请求操作 需要执行 abort()
+
+```
+currentAjax = $.ajax({
+        type: 'GET',
+        url: 'http://jsonplaceholder.typicode.com/comments',
+        success: function (res) {
+          console.log(res)
+        },
+        error: function (err) {
+          console.log("获取失败")
+        }
+    })
+    $('.cancel').click(function () {
+      if (currentAjax) {
+        currentAjax.abort()
+      }
+    })
+```
