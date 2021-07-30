@@ -56,3 +56,19 @@ currentAjax = $.ajax({
       }
     })
 ```
+
+10. 新的运算符 ?. 链式判断符
+
+- obj.func?.() 判断方式是否存在 存在在执行
+- 若链式判断符存在于圆括号内 那么只在圆括号内有意义
+- new a?.() 禁止
+- a?.`{b}` 禁止
+- super?.foo() 禁止
+
+11. 代替短路运算符的 null 判断运算符
+
+- const headerText = response.settings.headerText || 'Hello, world!';
+- 原本的意愿是当属性值为 null 或 undefined 的时候 赋默认值 然后当值为 false 0 '' 的时候默认值也会生效
+- 所以应使用 null 判断运算符
+- const headerText = response.settings.headerText ?? 'Hello, world!';
+- 只有当属性值为 null 或 undefined 时,才会生效
