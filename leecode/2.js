@@ -16,6 +16,7 @@
 
 let func = (function () {
   // TODO 请实现对应代码逻辑，每调用一次返回值都会加1
+  // 闭包实现
   let num = 0;
   return () => {
     return ++num;
