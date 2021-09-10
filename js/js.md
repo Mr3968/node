@@ -72,3 +72,5 @@ currentAjax = $.ajax({
 - 所以应使用 null 判断运算符
 - const headerText = response.settings.headerText ?? 'Hello, world!';
 - 只有当属性值为 null 或 undefined 时,才会生效
+
+12. new Date("2020-01-01 09:09") 在 ios 上运行不出来 转换出来全是 NaN new Date(2020/01/01 09:09) 才行
