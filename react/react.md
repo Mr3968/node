@@ -60,9 +60,11 @@ function MyComponent() {
 14. 调用 getSnapshotBeforeUpdate
 
 - 16 版本之后 componentWillXXXX 钩子前增加了 UNSAFE 前缀
+
   - 原因是 因为 Stack Reconciler 重构为 Fiber Reconciler 后，render 阶段的任务可能中断/重新开始 对应的组件在 render 阶段的声明钩子（componentWillXXX）可能触发多次 与 15 版本不一致 因此标记为 "UNSAFE\_"
 
 - 所以出了代替的生命周期钩子 getSnapshotBeforeUpdate
+
   - 因为 getSnapshotBeforeUpdate 是在 commit 阶段的 before mutation 阶段调用的 由于 commit 阶段是同步的 所有不会遇到多次调用的问题
 
 - 此 api 必须与 componentDidUpdate 配合使用 主要是用在可能更改 DOM 之前从 DOM 中获取一些信息，比如滚动的位置 这个方法返回的任何值，都会传递给 componentDidUpdate(nextProps,nextState,snapshot)
@@ -70,3 +72,5 @@ function MyComponent() {
 - 可能会出现在需要以特殊方式进行处理 UI 时调用
 
 - 他接受两个参数 prevProps preState
+
+* **React concurrent mode**
