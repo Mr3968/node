@@ -74,3 +74,13 @@ function MyComponent() {
 - 他接受两个参数 prevProps preState
 
 * **React concurrent mode**
+
+15. useCallback 以及 useMemo 以及react.memo的区别
+
+- useCallback是缓存函数，当需要给子组件传递props包括函数时 才需要使用useCallback去缓存他 因为当父组件改变时 函数也会被重新定义一次（相当于修改了引用地址） 所有使用useCallback去缓存他 那么他就不会被重复定义（也就是一直都是一个引用地址不会发生改变）
+
+- useMemo是原来缓存对象 也就是第一个参数是回调 这个回调return的一个对象
+
+- react.memo是用来缓存组件 当组件的props与state没有发生改变的时候 就不需要进行更新
+
+- useCallback、useMemo的第二个参数都是一个数组 当数组的值改变了的时候就需要更新缓存的东西
