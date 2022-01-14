@@ -202,7 +202,7 @@
   - 监听鼠标的`mousedown`事件  去获取当前点击时的target的data-index，data-type两个属性  
   - 根据index 以及type来对相应的点进行操作  没有就是添加这个点 移动的时候 相应的改变他的坐标
   - 绘制了点之后 会把所有点的坐标受控 方便进行path的绘制  
-    - path:M：起点，L：直线终点 （大写觉得定位 ，小写相对定位）strokeDasharray：间隔多少像素绘制一次（虚线） fill:填充颜色 
+    - path:M：起点，L：直线终点 （大写绝对定位 ，小写相对定位）strokeDasharray：间隔多少像素绘制一次（虚线） fill:填充颜色 
   - 取消挂载的时候 会取消事件的监听 
 
 
